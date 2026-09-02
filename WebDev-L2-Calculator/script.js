@@ -10,14 +10,12 @@ let previousInput = "";
 let operator = null;
 let shouldReset = false;
 
-// Update display
 function updateDisplay() {
   resultDisplay.textContent = currentInput;
   expressionDisplay.textContent =
     previousInput && operator ? `${previousInput} ${operator}` : "";
 }
 
-// Number input
 function appendNumber(number) {
   if (shouldReset) {
     currentInput = "";
@@ -35,7 +33,6 @@ function appendNumber(number) {
   updateDisplay();
 }
 
-// Choose operator
 function chooseOperator(nextOperator) {
   if (operator && !shouldReset) {
     calculate();
@@ -48,7 +45,6 @@ function chooseOperator(nextOperator) {
   updateDisplay();
 }
 
-// Calculate result
 function calculate() {
   if (!operator || previousInput === "") return;
 
@@ -93,7 +89,6 @@ function calculate() {
   updateDisplay();
 }
 
-// Clear calculator
 function clearCalculator() {
   currentInput = "0";
   previousInput = "";
@@ -115,21 +110,18 @@ function deleteCharacter() {
   updateDisplay();
 }
 
-// Number button listeners
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
     appendNumber(button.dataset.number);
   });
 });
 
-// Operator listeners
 operatorButtons.forEach((button) => {
   button.addEventListener("click", () => {
     chooseOperator(button.dataset.operator);
   });
 });
 
-// Action listeners
 actionButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const action = button.dataset.action;
@@ -150,7 +142,6 @@ actionButtons.forEach((button) => {
   });
 });
 
-// Keyboard support
 document.addEventListener("keydown", (e) => {
   if (!isNaN(e.key) || e.key === ".") {
     appendNumber(e.key);
@@ -174,5 +165,4 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Initial display
 updateDisplay();
