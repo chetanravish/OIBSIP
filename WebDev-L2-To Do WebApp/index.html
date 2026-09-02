@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow | To-Do App</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>TaskFlow</h1>
+      <p>Organize your day with a beautiful to-do list.</p>
+    </header>
+
+    <div class="task-input">
+      <input type="text" id="taskInput" placeholder="Enter a new task..." />
+      <button id="addTaskBtn">Add Task</button>
+    </div>
+
+    <section class="list-section">
+      <div class="section-header">
+        <h2>Pending Tasks</h2>
+        <span id="pendingCount">0 Pending</span>
+      </div>
+
+      <ul id="pendingList"></ul>
+      <p id="pendingEmpty" class="empty">No pending tasks 🎉</p>
+    </section>
+
+    <section class="list-section completed">
+      <div class="section-header">
+        <h2>Completed Tasks</h2>
+        <span id="completedCount">0 Completed</span>
+      </div>
+
+      <ul id="completedList"></ul>
+      <p id="completedEmpty" class="empty">Complete a task to see it here.</p>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
